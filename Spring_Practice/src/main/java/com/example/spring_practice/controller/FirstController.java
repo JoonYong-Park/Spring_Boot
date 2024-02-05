@@ -9,13 +9,13 @@ public class FirstController {
 
     @GetMapping("/hello")
     public String hello(Model model) {
-        model.addAttribute("username","joonyong");
+        model.addAttribute("username","JoonYong");
         return "hello";
     }
 
     @GetMapping("/bye")
     public String goodbye(Model model){
-        model.addAttribute("username","joonyong");
+        model.addAttribute("username","준용");
         return "goodbye";
     }
 }

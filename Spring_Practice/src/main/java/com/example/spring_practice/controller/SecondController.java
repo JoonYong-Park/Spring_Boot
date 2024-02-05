@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SecondController {
 
-    @GetMapping("/randomFruit")
+    @GetMapping("/fruit")
     public String qwer(Model model){
-        String[] arr = {"Apple", "Banana", "Cherry", "Dingle Very", " Eggfruit"};
+        String[] arr = {"Apple", "Banana", "Cherry", "Dingle very", "Egg fruit"};
         int randomNum = (int) (Math.random() * arr.length);
 
         model.addAttribute("fruit", arr[randomNum]);
+        System.out.println(arr[randomNum]);
         return "fruit";
     }
 
-    @GetMapping("/randomNumber")
+    @GetMapping("/number")
     public String randomNumber(Model model){
         int randomNum = (int) (Math.random() * 100);
 
