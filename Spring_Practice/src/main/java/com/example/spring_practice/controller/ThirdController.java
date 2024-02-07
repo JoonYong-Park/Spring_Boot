@@ -15,4 +15,13 @@ public class ThirdController {
         model.addAttribute("menu", arr[randomNum]);
         return "lunch";
     }
+
+    @GetMapping("/dinner")
+    public String diner(Model model){
+        String[] arr = {"집밥", "편의점", "햄버거", "치킨", "피자"};
+        int randomnum = (int) (Math.random() * arr.length);
+
+        model.addAttribute("menu", arr[randomnum]);
+        return "dinner";
+    }
 }
