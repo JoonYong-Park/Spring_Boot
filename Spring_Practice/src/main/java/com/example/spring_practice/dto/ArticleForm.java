@@ -1,5 +1,7 @@
 package com.example.spring_practice.dto;
 
+import com.example.spring_practice.entity.Article;
+
 // 폼 데이터를 받아 올 그릇, 즉 DTO(Data Transfer Object)를 만들어 줍니다.
 public class ArticleForm {
     private String title;    // 제목 받을 필드
@@ -16,5 +18,10 @@ public class ArticleForm {
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    // DTO -> Entity
+    public Article toEntity() {
+        return new Article(null, title, content);
     }
 }
