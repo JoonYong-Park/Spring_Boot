@@ -36,4 +36,8 @@ public class Article {
                 ", content='" + content + '\'' +
                 '}';
     }
+
+    public String getId() {
+        return id.toString();
+    }
 }

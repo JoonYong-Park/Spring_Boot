@@ -44,7 +44,7 @@ public class ArticleController {
         log.info(saved.toString());
 
         // 3. return view page
-        return "";
+        return "redirect:/articles/" + saved.getId();
     }
 
     // Read
@@ -62,6 +62,7 @@ public class ArticleController {
         return "articles/show";
     }
 
+    // 인덱스
     @GetMapping("/articles")
     public String index(Model model){
         // 1. 모든 article을 가져오기
