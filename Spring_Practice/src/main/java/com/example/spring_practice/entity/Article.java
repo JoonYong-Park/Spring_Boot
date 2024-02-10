@@ -22,6 +22,7 @@ public class Article {
         this.content = content;
     }
 
+    // 기본 생성자 추가
     public Article() {
 
     }
