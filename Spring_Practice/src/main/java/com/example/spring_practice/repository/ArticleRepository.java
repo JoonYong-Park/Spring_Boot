@@ -4,6 +4,7 @@ import com.example.spring_practice.entity.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public interface ArticleRepository extends CrudRepository<Article, Long> { //CrudRepository를 상속받아서 사용합니다.
     // 기본적인 CRUD 메소드가 자동으로 생성됩니다.
@@ -14,4 +15,5 @@ public interface ArticleRepository extends CrudRepository<Article, Long> { //Cru
 
     @Override
     ArrayList<Article> findAll(); // 기본적으로 제공되는 findAll() 메소드를 오버라이딩해서 사용합니다.
+
 }

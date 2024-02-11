@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@Controller
 @Slf4j
+@Controller
 public class ArticleController {
 
     // 스프링부트가 미리 생성해놓은 객체를 가져다가 자동 연결!
@@ -87,4 +87,23 @@ public class ArticleController {
         return "articles/edit";
     }
 
+    @PostMapping("/articles/update")
+    public String update(ArticleForm form) {
+        log.info(form.toString());
+
+        // 1. DTO -> Entity
+        Article articleEntity = form.toEntity();
+        log.info(articleEntity.toString());
+
+        // 2. Entity -> Repository -> DB
+        // 2-1. DB에 기존 데이터를 가져온다.
+        Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+
+        // 2-2 기존 데이터가 있다면 수정
+        if (target != null) {
+            articleRepository.save(articleEntity);  // 엔티티를 DB에 저장(갱신)
+        }
+        // 3. 수정 결과 페이지로 리다이렉트 하기
+        return "redirect:/articles/" + articleEntity.getId();
+    }
 }

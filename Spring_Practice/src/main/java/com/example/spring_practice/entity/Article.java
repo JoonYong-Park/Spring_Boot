@@ -1,8 +1,16 @@
 package com.example.spring_practice.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
+@Getter
 public class Article {
 
     @Id // 대표값 지정
@@ -15,29 +23,29 @@ public class Article {
     @Column
     private String content;
 
-    // 생성자 추가
-    public Article(Long id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-    }
-
-    // 기본 생성자 추가
-    public Article() {
-
-    }
-
-    // toString() 추가
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
-
-    public String getId() {
-        return id.toString();
-    }
+//    // 생성자 추가
+//    public Article(Long id, String title, String content) {
+//        this.id = id;
+//        this.title = title;
+//        this.content = content;
+//    }
+//
+//    // 기본 생성자 추가
+//    public Article() {
+//
+//    }
+//
+//    // toString() 추가
+//    @Override
+//    public String toString() {
+//        return "Article{" +
+//                "id=" + id +
+//                ", title='" + title + '\'' +
+//                ", content='" + content + '\'' +
+//                '}';
+//    }
+//
+//    public String getId() {
+//        return id.toString();
+//    }
 }
