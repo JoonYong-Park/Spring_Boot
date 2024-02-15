@@ -9,17 +9,18 @@
     </tr>
     </thead>
     <tbody>
-    {{#member}}
-        <tr>
-            <td>{{id}}</td>
-            <td>{{email}}</td>
-            <td>{{password}}</td>
-        </tr>
-    {{/member}}
+        {{#member}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{email}}</td>
+                <td>{{password}}</td>
+            </tr>
+        {{/member}}
     </tbody>
 </table>
-<a href="/articles/{{member.id}}/edit" class="btn btn-primary">Edit</a>
+
 <a href="/members/{{member.id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/members/{{member.id}}/delete" class="btn btn-primary">Delete</a>
 <a href="/members">Go to member list</a>
 
 {{>layouts/footer}}
